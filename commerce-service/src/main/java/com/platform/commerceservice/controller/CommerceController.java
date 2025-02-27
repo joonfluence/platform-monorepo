@@ -16,7 +16,7 @@ public class CommerceController {
   @GetMapping("/account")
   public Mileage getAccount() {
     System.out.println("getAccount");
-    accountService.saveAccount();
+    accountService.saveAccount(1L);
     return mileageService.getMileage();
   }
 

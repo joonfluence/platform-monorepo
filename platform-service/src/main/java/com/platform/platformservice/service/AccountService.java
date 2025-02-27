@@ -13,12 +13,8 @@ public class AccountService {
 
   @CircuitBreaker(name = "commerceClient")
   public Mileage getAccount() {
+    System.out.println("유저 검증 및 유저 정보 조회");
     return commerceClient.getAccount();
-  }
-
-  @CircuitBreaker(name = "commerceClient")
-  public String getSample() {
-    return commerceClient.getSample();
   }
 
   private String fallbackType(Throwable t) {

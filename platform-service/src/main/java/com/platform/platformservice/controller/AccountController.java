@@ -12,13 +12,7 @@ public class AccountController {
   private final AccountService accountService;
 
   @GetMapping("/account")
-  public Mileage getMileage() {
-    System.out.println("accountService = " + accountService);
+  public Mileage getAccountAndMileage() {
     return accountService.getAccount();
-  }
-  @GetMapping("/sample")
-  public String getSample() {
-    System.out.println("accountService = " + accountService);
-    return accountService.getSample();
   }
 }

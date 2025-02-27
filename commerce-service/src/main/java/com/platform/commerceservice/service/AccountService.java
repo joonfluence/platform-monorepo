@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class AccountService {
     private final ExternalClient externalClient;
 
-    public void saveAccount() {
-        System.out.println("save account completed");
+    public void saveAccount(Long userId) {
+        System.out.println("save account completed : " + userId);
     }
 }
