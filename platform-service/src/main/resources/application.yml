@@ -1,8 +1,13 @@
 spring:
   application:
     name: platform-service
-server:
-  port: 9090
+  kafka:
+    admin:
+      auto-create: true
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
 logging:
   level:

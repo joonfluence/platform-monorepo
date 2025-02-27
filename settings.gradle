@@ -1,5 +1,3 @@
 rootProject.name = 'platform'
 
-include('platform-service')
-include('commerce-service')
-include('external-service')
+include('platform-service', 'commerce-service', 'external-service', 'mileage-service')

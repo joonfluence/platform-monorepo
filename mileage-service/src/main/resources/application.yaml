@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: mileage-service
+  kafka:
+    admin:
+      auto-create: true
+server:
+  port: 9094
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: "mileage-group"

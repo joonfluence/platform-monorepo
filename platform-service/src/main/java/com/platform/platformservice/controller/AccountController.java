@@ -1,18 +1,19 @@
 package com.platform.platformservice.controller;
 
-import com.platform.platformservice.domain.Mileage;
-import com.platform.platformservice.service.AccountService;
+import com.platform.platformservice.event.AccountSyncEvent;
+import com.platform.platformservice.kafka.KafkaProducer;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
 public class AccountController {
-  private final AccountService accountService;
+    private final KafkaProducer kafkaProducer;
 
-  @GetMapping("/account")
-  public Mileage getAccountAndMileage() {
-    return accountService.getAccount();
-  }
+    @PostMapping("/account")
+    public void getAccountAndMileage(@RequestBody AccountSyncEvent event) {
+        kafkaProducer.sendAccountSyncEvent(event);
+    }
 }

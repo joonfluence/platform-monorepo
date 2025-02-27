@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class MileageService {
   public Mileage getMileage() {
+    System.out.println("mileage success");
     return new Mileage(1L, 2000);
   }
 }

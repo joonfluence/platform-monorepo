@@ -1,4 +1,4 @@
-package com.platform.externalservice;
+package com.platform.mileageservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-public class ExternalServiceApplication {
+public class MileageServiceApplication {
 
-  public static void main(String[] args) {
-    SpringApplication.run(ExternalServiceApplication.class, args);
-  }
+	public static void main(String[] args) {
+		SpringApplication.run(MileageServiceApplication.class, args);
+	}
+
 }
